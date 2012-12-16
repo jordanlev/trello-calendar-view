@@ -1,0 +1,157 @@
+/*** Calendar ***/
+#calendar {
+	border-collapse: collapse;
+	width: 100%;
+}
+#calendar td {
+	padding: 0;
+}
+
+.week-of-7-days .day { width: 14.285714286%; }
+.week-of-6-days .day { width: 16.666666667%; }
+.week-of-5-days .day { width: 20%; }
+.week-of-4-days .day { width: 25%; }
+.week-of-3-days .day { width: 33.333333333%; }
+.week-of-2-days .day { width: 50%; }
+.week-of-1-days .day { width: 100%; }
+
+.day {
+	border: 1px solid #ccc;
+	vertical-align: top;
+	height: 100px; /* effectively min-height */
+}
+
+@media screen and (min-width: 800px) {
+	.day { height: 150px; }
+}
+
+@media screen and (min-width: 1000px) {
+	.day { height: 200px; }
+}
+
+@media screen and (min-width: 1250px) {
+	.day { height: 250px; }
+}
+
+@media screen and (min-width: 1700px) {
+	.day { height: 300px; }
+}
+
+@media screen and (max-width: 480px) {
+	#calendar th { display: none; }
+	.week .day { display: block; width: 100%; }
+}
+
+.day-past {
+	background-color: #ddd;
+}
+
+.event {
+	padding: 2px 1px 1px 10px;
+	margin-bottom: 1px;
+}
+
+.event-done {
+	text-decoration: line-through;
+}
+
+.date {
+	padding: 2px 1px 5px 3px;
+}
+
+#calendar a {
+	text-decoration: none;
+	color: black;
+}
+#calendar a:hover {
+	text-decoration: underline;
+}
+
+
+/*** Misc. ***/
+#loading {
+	position: absolute;
+	top: 0;
+	left: 45%;
+	background-color: gold;
+	padding: 2px 14px;
+	display: none;
+}
+
+#login {
+	text-align: center;
+	margin-top: 20%;
+}
+
+
+
+/*** Header (Settings and Projects) ***/
+#header {
+	display: none; /* will be shown by js */
+}
+
+#header h4 {
+	display: inline;
+	padding: 2px 4px;
+	font-weight: normal;
+}
+#header ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#header li {
+	display: inline;
+	margin-right: 10px;
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+#settings {
+	margin: 5px 1px;
+	padding: 4px 5px;
+	border: 1px solid black;
+	background-color: linen;
+}
+
+#settings input {
+	width: 25px;
+	text-align: center;
+}
+
+#projects {
+	margin: 5px 1px 10px 1px;
+	padding: 8px 5px;
+	border: 1px solid black;
+}
+
+#legend {
+	display: none; /* will be shown by js */
+}
+
+#legend li {
+	border: 1px solid #ccc;
+}
+
+#logout {
+	position: absolute;
+	top: 12px;
+	right: 7px;
+}
+
+@media screen and (max-width: 650px) {
+	#settings h4 {
+		display: block;
+		margin: 1px 0 2px 0;
+	}
+}
+@media screen and (max-width: 480px) {
+	#settings h4 {
+		margin-bottom: 0;
+	}
+	#header li {
+		display: block;
+	}
+	
+}

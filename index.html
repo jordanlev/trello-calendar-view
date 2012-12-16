@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Trello Calendar View</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+  	<script src="https://api.trello.com/1/client.js?key=7b7b03c2e7800eab6d675b958244ac85"></script>
+	
+	<script type="text/javascript" src="js/trellodata.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+</head>
+
+<body>
+	
+	<div id="login">
+		[<a href="#">Log In to Trello</a>]
+	</div>
+	
+	<div id="logout">
+		[<a href="#" id="logout-link">Log Out</a>]
+	</div>
+
+	<div id="loading">Loading...</div>
+	
+	<div id="header">
+		<div id="settings">
+			<h4>Calendar Layout:</h4>
+			<ul>
+				<li>
+					<label>
+						<input type="text" id="numberOfWeeks" name="numberOfWeeks" value="6">
+						weeks
+					</label>
+				</li>
+				
+				<li>
+					<label>
+						<select id="daysPerWeek" name="daysPerWeek">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5" selected="selected">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+						</select>
+						days/wk
+					</label>
+				</li>
+				
+				<li>
+					<label>
+						starts on
+						<select id="firstDayOfWeek" name="firstDayOfWeek">
+							<option value="0">Sunday</option>
+							<option value="1" selected="selected">Monday</option>
+							<option value="2">Tuesday</option>
+							<option value="3">Wednesday</option>
+							<option value="4">Thursday</option>
+							<option value="5">Friday</option>
+							<option value="6">Saturday</option>
+						</select>
+					</label>
+				</li>
+			</ul>
+			
+		</div>
+	
+		<div id="projects">
+			<div id="boards">
+				<h4>Choose Trello Board:</h4>
+				<select></select>
+			</div>
+			<div id="legend">
+				<h4>Showing Projects:</h4>
+				<ul></ul>
+			</div>
+		</div>
+	</div>
+	
+	<table id="calendar">
+	</table>
+	
+</body>
+</html>
