@@ -44,8 +44,16 @@ var trelloData = null;
 				+ '<% }); %>'
 			);
 			var html = tpl({'boards': boards});
-			$('#boards select').html(html);
+			var $select = $('#boards select');
+			$select.html(html);
 			$('#loading').hide();
+
+			var $options = $select.find('option');
+			if ($options.length == 2) {
+				$select.val($options.last().val());
+				$select.trigger('change');
+			}
+			
 		});
 	}
 

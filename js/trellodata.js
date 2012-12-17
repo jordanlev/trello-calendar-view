@@ -1,7 +1,7 @@
 var CARD_IS_DONE_LABEL = 'Done'; //name of the trello label applied to cards marked as "done"
 
 function loadBoards(callback) {
-	Trello.get('members/me/boards', function(boards) {
+	Trello.get('members/me/boards?filter=open', function(boards) {
 		var simplifiedBoards = _.map(boards, function(board) {
 			return {'id': board.id, 'name': board.name}
 		});
